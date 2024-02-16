@@ -1,7 +1,14 @@
 const express = require("express");
 var cookieParser = require("cookie-parser");
 const app = express();
+var cors = require("cors");
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: "http://127.0.0.1:5500",
+    credentials: true,
+  })
+);
 
 const port = process.env.PORT || 5000;
 
